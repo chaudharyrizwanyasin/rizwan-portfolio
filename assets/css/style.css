@@ -83,7 +83,9 @@ A. Basic Styling
 /*-------------------------------------------
   -- Styling - Colors, Font Size, Font Family
 -------------------------------------------*/
-
+.container py-3 {
+    text-align: center !important;
+}
 body {
     color: #fff;
     background-color: #020312;
@@ -280,10 +282,6 @@ B. Helpers
     width: 64px;
 }
 
-.text-dark {
-    text-align: center;
-}
-
 /*------------------------------------------
 --Portfolio
 ------------------------------------------*/
@@ -307,12 +305,27 @@ B. Helpers
 }
 
 /* Project Styles */
+.box {
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    
+  }
+
+  .box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image fills the div without distortion */
+      }
+  
 .project {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px;
     background-color: #fff;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .project h3 {
@@ -323,7 +336,7 @@ B. Helpers
 
 .project p {
     font-size: 16px;
-    color: #555;
+    color: #3f3f3f;
     line-height: 1.6;
     margin-bottom: 10px;
 }
@@ -339,26 +352,17 @@ B. Helpers
 }
 
 .project a:hover {
-    background-color: #0056b3;
+    background-color: #007bff;
+    color: #000000;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    #portfolio h2 {
-        font-size: 28px;
-    }
-
-    .project {
-        padding: 15px;
-    }
-
-    .project h3 {
-        font-size: 24px;
-    }
-
-    .project p {
-        font-size: 14px;
-    }
+    
+     .project {
+          grid-template-columns: 1fr; /* Single column */
+        }
+      
 }
 
 /*-------------------------------------------
@@ -444,17 +448,17 @@ B. Helpers
 -------------------------------------------*/
 
 [data-bg-image] {
-    background-size: cover;
+    background-size: contain;
     background-position: 50%;
 }
 
 .ts-background {
     bottom: 0;
-    left: 0;
+    right: 0;
     height: 100%;
     overflow: hidden;
     position: absolute;
-    width: 100%;
+    width: 50%;
     z-index: -2;
 }
 
@@ -469,7 +473,7 @@ B. Helpers
 }
 
 .ts-background-repeat .ts-background-image {
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: inherit;
 }
 
@@ -875,9 +879,6 @@ p {
 
 .ts-text-small {
     font-size: .8125rem !important;
-}
-
-.ts-xs-text-center {
 }
 
 /*-------------------------------------------
@@ -1670,7 +1671,7 @@ form.ts-labels-inside-input .form-group label.focused,
     padding-bottom: 4rem;
 }
 
-.ts-item:hover .icon, .ts-item:hover h4, .ts-item:hover p {
+.ts-item:hover .icon-wordpress, .ts-item:hover h4, .ts-item:hover p {
     transform: translateY(-0.625rem);
 }
 
@@ -1689,7 +1690,7 @@ form.ts-labels-inside-input .form-group label.focused,
     transform: translateX(0%);
 }
 
-.ts-item .icon, .ts-item h4, .ts-item p {
+.ts-item .icon-wordpress, .ts-item h4, .ts-item p {
     transition: .3s ease;
     transform: translateY(0);
 }
@@ -1706,6 +1707,12 @@ form.ts-labels-inside-input .form-group label.focused,
     display: flex;
     flex-direction: column;
     height: 100%;
+    background-color: #fff;
+    color: #000;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .ts-item-header {
@@ -1713,17 +1720,17 @@ form.ts-labels-inside-input .form-group label.focused,
     position: relative;
 }
 
-.ts-item-header .icon {
+.ts-item-header .icon-wordpress {
     position: relative;
     display: inline-block;
 }
 
-.ts-item-header .icon .step {
+.ts-item-header .icon-wordpress .step {
     background-color: #f26c4f;
     top: 0;
     box-shadow: .125rem .1875rem .9375rem rgba(0, 0, 0, .15);
     border-radius: 50%;
-    color: #fff;
+    color: #000000;
     font-weight: 600;
     line-height: 2rem;
     right: 0;
@@ -2516,6 +2523,10 @@ E. Template Specific Elements
     margin: 0;
 }
 
+.text-dark {
+    text-align: center;
+}
+
 .ts-time-line__horizontal .ts-time-line__item figure {
     margin-left: 1.875rem;
     margin-top: 4.6875rem;
@@ -2960,4 +2971,32 @@ E. Template Specific Elements
     .ts-carousel-centered .owl-nav .owl-prev {
         left: 2.5rem;
     }
+}
+
+.footer-contact {
+    display: flex;
+    align-items: center; /* Align icon and label vertically */
+    gap: 10px; /* Add space between icon and text */
+    justify-content: center; /* Center them horizontally */
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center everything horizontally */
+    text-align: center;
+    
+}
+
+.footer-contact i {
+    font-size: 18px; /* Adjust icon size */
+    color: #fff; /* Adjust color if needed */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.opacity {
+    text-align: center;
+    margin-bottom: 30px;
+
 }
